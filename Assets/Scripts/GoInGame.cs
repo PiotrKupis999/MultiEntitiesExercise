@@ -2,6 +2,9 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.NetCode;
 using Unity.Burst;
+using UnityEngine;
+using UnityEditor;
+using System;
 
 public struct GoInGameRequest : IRpcCommand
 {
@@ -15,24 +18,24 @@ public partial struct GoInGameClientSystem : ISystem
     public void OnCreate(ref SystemState state)
     {
         state.RequireForUpdate<PlayerSpawner>();
-        var builder = new EntityQueryBuilder(Allocator.Temp)
+        var _builder = new EntityQueryBuilder(Allocator.Temp)
             .WithAll<NetworkId>()
             .WithNone<NetworkStreamInGame>();
-        state.RequireForUpdate(state.GetEntityQuery(builder));
+        state.RequireForUpdate(state.GetEntityQuery(_builder));
     }
 
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
-        var commandBuffer = new EntityCommandBuffer(Allocator.Temp);
-        foreach (var (id, entity) in SystemAPI.Query<RefRO<NetworkId>>().WithEntityAccess().WithNone<NetworkStreamInGame>())
+        var _commandBuffer = new EntityCommandBuffer(Allocator.Temp);
+        foreach (var (_id, _entity) in SystemAPI.Query<RefRO<NetworkId>>().WithEntityAccess().WithNone<NetworkStreamInGame>())
         {
-            commandBuffer.AddComponent<NetworkStreamInGame>(entity);
-            var req = commandBuffer.CreateEntity();
-            commandBuffer.AddComponent<GoInGameRequest>(req);
-            commandBuffer.AddComponent(req, new SendRpcCommandRequest { TargetConnection = entity });
+            _commandBuffer.AddComponent<NetworkStreamInGame>(_entity);
+            var req = _commandBuffer.CreateEntity();
+            _commandBuffer.AddComponent<GoInGameRequest>(req);
+            _commandBuffer.AddComponent(req, new SendRpcCommandRequest { TargetConnection = _entity });
         }
-        commandBuffer.Playback(state.EntityManager);
+        _commandBuffer.Playback(state.EntityManager);
     }
 }
 
@@ -41,43 +44,54 @@ public partial struct GoInGameClientSystem : ISystem
 [WorldSystemFilter(WorldSystemFilterFlags.ServerSimulation)]
 public partial struct GoInGameServerSystem : ISystem
 {
-    private ComponentLookup<NetworkId> networkIdFromEntity;
+    private ComponentLookup<NetworkId> _networkIdFromEntity;
 
     [BurstCompile]
     public void OnCreate(ref SystemState state)
     {
         state.RequireForUpdate<PlayerSpawner>();
-        var builder = new EntityQueryBuilder(Allocator.Temp)
+        var _builder = new EntityQueryBuilder(Allocator.Temp)
             .WithAll<GoInGameRequest>()
             .WithAll<ReceiveRpcCommandRequest>();
-        state.RequireForUpdate(state.GetEntityQuery(builder));
-        networkIdFromEntity = state.GetComponentLookup<NetworkId>(true);
+        state.RequireForUpdate(state.GetEntityQuery(_builder));
+        _networkIdFromEntity = state.GetComponentLookup<NetworkId>(true);
     }
 
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
-        var prefab = SystemAPI.GetSingleton<PlayerSpawner>().Player;
-        state.EntityManager.GetName(prefab, out var prefabName);
-        var worldName = new FixedString32Bytes(state.WorldUnmanaged.Name);
+
+
+        var _prefab = SystemAPI.GetSingleton<PlayerSpawner>().Player;
+        state.EntityManager.GetName(_prefab, out var _prefabName);
+        var _worldName = new FixedString32Bytes(state.WorldUnmanaged.Name);
+
+        
 
         var commandBuffer = new EntityCommandBuffer(Allocator.Temp);
-        networkIdFromEntity.Update(ref state);
+        _networkIdFromEntity.Update(ref state);
 
-        foreach (var (reqSrc, reqEntity) in SystemAPI.Query<RefRO<ReceiveRpcCommandRequest>>().WithAll<GoInGameRequest>().WithEntityAccess())
+        foreach (var (_reqSrc, _reqEntity) in SystemAPI.Query<RefRO<ReceiveRpcCommandRequest>>().WithAll<GoInGameRequest>().WithEntityAccess())
         {
-            commandBuffer.AddComponent<NetworkStreamInGame>(reqSrc.ValueRO.SourceConnection);
-            var networkId = networkIdFromEntity[reqSrc.ValueRO.SourceConnection];
+            commandBuffer.AddComponent<NetworkStreamInGame>(_reqSrc.ValueRO.SourceConnection);
+            var _networkId = _networkIdFromEntity[_reqSrc.ValueRO.SourceConnection];
+            
 
-            UnityEngine.Debug.Log($"'{worldName}' setting connection '{networkId.Value}' to in game, spawning a Ghost '{prefabName}' for them!");
+            UnityEngine.Debug.Log($"'{_worldName}' setting connection '{_networkId.Value}' to in game, spawning a Ghost '{_prefabName}' for them!");
 
-            var player = commandBuffer.Instantiate(prefab);
-            commandBuffer.SetComponent(player, new GhostOwner { NetworkId = networkId.Value });
+            
+
+            var _player = commandBuffer.Instantiate(_prefab);
+            commandBuffer.SetComponent(_player, new GhostOwner { NetworkId = _networkId.Value });
+
+
 
             // Add the player to the linked entity group so it is destroyed automatically on disconnect
-            commandBuffer.AppendToBuffer(reqSrc.ValueRO.SourceConnection, new LinkedEntityGroup { Value = player });
-            commandBuffer.DestroyEntity(reqEntity);
+            commandBuffer.AppendToBuffer(_reqSrc.ValueRO.SourceConnection, new LinkedEntityGroup { Value = _player });
+            commandBuffer.DestroyEntity(_reqEntity);
         }
         commandBuffer.Playback(state.EntityManager);
     }
+
+
 }

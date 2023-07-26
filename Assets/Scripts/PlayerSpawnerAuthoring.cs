@@ -15,9 +15,9 @@ public class PlayerSpawnerAuthoring : MonoBehaviour
     {
         public override void Bake(PlayerSpawnerAuthoring authoring)
         {
-            PlayerSpawner component = default(PlayerSpawner);
-            component.Player = GetEntity(authoring.Player);
-            AddComponent(component);
+            PlayerSpawner _component = default(PlayerSpawner);
+            _component.Player = GetEntity(authoring.Player);
+            AddComponent(_component);
         }
     }
 }

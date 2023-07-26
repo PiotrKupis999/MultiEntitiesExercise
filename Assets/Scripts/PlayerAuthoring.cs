@@ -12,8 +12,8 @@ public class PlayerAuthoring : MonoBehaviour
     {
         public override void Bake(PlayerAuthoring authoring)
         {
-            Player component = default;
-            AddComponent(component);
+            Player _component = default;
+            AddComponent(_component);
         }
     }
 }

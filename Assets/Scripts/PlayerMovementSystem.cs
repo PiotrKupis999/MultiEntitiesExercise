@@ -14,12 +14,12 @@ public partial struct PlayerMovementSystem : ISystem
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
-        var speed = Time.deltaTime * 4;
-        foreach (var (input, trans) in SystemAPI.Query<RefRO<PlayerInput>, RefRW<LocalTransform>>().WithAll<Simulate>())
+        var _speed = Time.deltaTime * 4;
+        foreach (var (_input, _trans) in SystemAPI.Query<RefRO<PlayerInput>, RefRW<LocalTransform>>().WithAll<Simulate>())
         {
-            var moveInput = new float2(input.ValueRO.Horizontal, input.ValueRO.Vertical);
-            moveInput = math.normalizesafe(moveInput) * speed;
-            trans.ValueRW.Position += new float3(moveInput.x, 0, moveInput.y);
+            var _moveInput = new float2(_input.ValueRO.Horizontal, _input.ValueRO.Vertical);
+            _moveInput = math.normalizesafe(_moveInput) * _speed;
+            _trans.ValueRW.Position += new float3(_moveInput.x, _input.ValueRO.Jump, _moveInput.y);
         }
 
     }

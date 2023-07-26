@@ -246,7 +246,6 @@
 0x2242e0be9337054b -    2468782654870717771 - UnityEngine.HingeJoint
 0x2246e6e3a8497fe4 -    2469915311114649572 - Unity.NetCode.GhostPrefabMetaData
 0x2281eb3d2c575ccd -    2486527117254679757 - UnityEngine.Rendering.Universal.ColorLookup
-0x22976c301731f7a6 -    2492579872576239526 - PlayerInput
 0x22a4da984252905d -    2496360440952688733 - Unity.PlasticSCM.Editor.Views.Branches.CreateBranchDialog
 0x22b47d9311734c95 -    2500761763703901333 - Unity.NetCode.UniqueInputTickMap
 0x22ba48250b36fab3 -    2502391866896874163 - UnityEditor.OcclusionCullingWindow
@@ -954,7 +953,6 @@
 0x8af8f60d4719b823 -   10014024308346173475 - UnityEngine.ConstantForce
 0x8b489b7833165dc3 -   10036442710150634947 - Unity.VisualScripting.WrappedEditorWindow
 0x8b4a63c9a0af1904 -   10036944437183977732 - UnityEngine.UIElements.ThemeStyleSheet
-0x8b69ec27e7c1822d -   10045820099962700333 - Assembly_CSharp.Generated.PlayerInputInputBufferData
 0x8bcdf9388203766c -   10073981962592417388 - TMPro.TMP_ColorGradient
 0x8be13617a03a2e19 -   10079396916132195865 - Unity.PlasticSCM.Editor.Views.DownloadPlasticExeWindow
 0x8bfd49d816c37e9b -   10087299932823453339 - Unity.VisualScripting.GraphWindow
@@ -1186,6 +1184,7 @@
 0xab876502700b925b -   12359958763485762139 - UnityEngine.UI.Toggle
 0xaba247b736a3913e -   12367526378934079806 - UnityEditor.AudioImporter
 0xabcea9cc293da0f3 -   12380019120018399475 - Unity.Physics.Authoring.StaticOptimizePhysicsBaking
+0xabec50cb4310e5cb -   12388365508923155915 - Assembly_CSharp.Generated.PlayerInputInputBufferData
 0xac0d327ee931805b -   12397620869880447067 - UnityEditor.MetroCertificatePasswordWindow
 0xac5486a2ee6e8500 -   12417698106910344448 - Unity.NetCode.GhostPredictionHistoryState
 0xac59d5e74a3eea2e -   12419192636810652206 - UnityEditor.UIElements.StyleSheets.ThemeStyleSheetImporterEditor
@@ -1266,6 +1265,7 @@
 0xb9ea3d75c4c81791 -   13396587617588877201 - UnityEngine.ReflectionProbe
 0xb9ec9fc01f9f1cf3 -   13397258639033441523 - TMPro.TMP_PackageResourceImporterWindow
 0xba496da1264b03cf -   13423380703254086607 - UnityEditor.Texture2DArrayInspector
+0xba49f289937c60a8 -   13423526837053317288 - PlayerInput
 0xba540edb6f13ea75 -   13426372724722494069 - Unity.Entities.SectionMetadataSetup
 0xba9862bb59e29138 -   13445605244321042744 - UnityEditor.DeviceSimulation.DeviceInfoAsset
 0xbaa248be8aed1c6f -   13448391420493503599 - UnityEditor.SceneManagement.PrefabStage
@@ -1739,7 +1739,7 @@
 0xfff083f0005ce9c7 -   18442385540903659975 - UnityEditor.TerrainTools.PaintHeightTool
 
 
-Exported Types (by stable hash) for scene: d4680598433aeb24d9b02232800497b7
+Exported Types (by stable hash) for scene: 815bc6acb386b994c8b92f91bbcd8c2e
 0xa499c090e7f843be -   11860722822256542654 - Unity.NetCode.PredictedGhostSpawnRequest
 0x1ed28536c03a248e -    2220984036446839950 - Unity.NetCode.GhostOwnerIsLocal
 0x73aa83af300f88ef -    8334618848851364079 - Unity.NetCode.SubSceneWithPrespawnGhosts
@@ -1761,7 +1761,7 @@ Exported Types (by stable hash) for scene: d4680598433aeb24d9b02232800497b7
 0x648fd259df5c570c -    7246241608903710476 - Player
 0xe460114dfb341eb4 -   16456172065036443316 - PlayerSpawner
 0xc73e8a829c87fcf6 -   14357064955680259318 - Unity.Scenes.SceneBoundingVolume
-0x22976c301731f7a6 -    2492579872576239526 - PlayerInput
+0xba49f289937c60a8 -   13423526837053317288 - PlayerInput
 0x97490261b3c2de08 -   10901246991677971976 - Unity.Transforms.LocalToWorld
 0x5c5d60f217e41458 -    6655582417222636632 - Unity.Transforms.LocalTransform
 0xb85b9436db64e098 -   13284374489189376152 - Unity.NetCode.SnapshotDynamicDataBuffer
@@ -1771,13 +1771,14 @@ Exported Types (by stable hash) for scene: d4680598433aeb24d9b02232800497b7
 0x4cbf55a3579771e6 -    5530233027471831526 - Unity.Rendering.WorldToLocal_Tag
 0xd39e7612a48a8b2a -   15248755210765110058 - Unity.Rendering.EntitiesGraphicsChunkInfo
 0xd39e7612a48a8b2a -   15248755210765110058 - Unity.Rendering.EntitiesGraphicsChunkInfo
+0xe631dd4362fbeac8 -   16587282184075471560 - Unity.Physics.PhysicsColliderKeyEntityPair
 0xbb15a6c2a0a29346 -   13480864414452323142 - Unity.Rendering.BlendProbeTag
 0x610de7f226aae334 -    6993500823593083700 - Unity.Rendering.WorldRenderBounds
 0x816834b5fcf1ed4d -    9324760984708050253 - Unity.Rendering.ChunkWorldRenderBounds
 0x816834b5fcf1ed4d -    9324760984708050253 - Unity.Rendering.ChunkWorldRenderBounds
 0xf87c4e1eba3efa58 -   17905272112398924376 - Unity.Rendering.MaterialMeshInfo
 0xbea79ca45e4be521 -   13738121418087589153 - Unity.Entities.LinkedEntityGroup
-0x8b69ec27e7c1822d -   10045820099962700333 - Assembly_CSharp.Generated.PlayerInputInputBufferData
+0xabec50cb4310e5cb -   12388365508923155915 - Assembly_CSharp.Generated.PlayerInputInputBufferData
 0xdb11cacba5e2db95 -   15785621144920578965 - Unity.Entities.Graphics.RenderFilterSettings
 0x581a9dbab3c943ea -    6348560049937925098 - Unity.Rendering.RenderBounds
 0x04b53aa63a22904d -     339241832550666317 - Unity.Rendering.RenderMeshArray

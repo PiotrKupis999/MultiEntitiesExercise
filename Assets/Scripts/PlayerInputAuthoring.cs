@@ -7,6 +7,7 @@ public struct PlayerInput : IInputComponentData
 {
     public int Horizontal;
     public int Vertical;
+    public int Jump;
 }
 
 
@@ -30,22 +31,25 @@ public partial struct SamplePlayerInput : ISystem
 
     public void OnUpdate(ref SystemState state)
     {
-        bool left = UnityEngine.Input.GetKey("left");
-        bool right = UnityEngine.Input.GetKey("right");
-        bool down = UnityEngine.Input.GetKey("down");
-        bool up = UnityEngine.Input.GetKey("up");
+        bool _left = Input.GetKey(KeyCode.A);
+        bool _right = Input.GetKey(KeyCode.D);
+        bool _down = Input.GetKey(KeyCode.S);
+        bool _up = Input.GetKey(KeyCode.W);
+        bool _jump = Input.GetKeyDown(KeyCode.Space);
 
-        foreach (var playerInput in SystemAPI.Query<RefRW<PlayerInput>>().WithAll<GhostOwnerIsLocal>())
+        foreach (var _playerInput in SystemAPI.Query<RefRW<PlayerInput>>().WithAll<GhostOwnerIsLocal>())
         {
-            playerInput.ValueRW = default;
-            if (left)
-                playerInput.ValueRW.Horizontal -= 1;
-            if (right)
-                playerInput.ValueRW.Horizontal += 1;
-            if (down)
-                playerInput.ValueRW.Vertical -= 1;
-            if (up)
-                playerInput.ValueRW.Vertical += 1;
+            _playerInput.ValueRW = default;
+            if (_left)
+                _playerInput.ValueRW.Horizontal -= 1;
+            if (_right)
+                _playerInput.ValueRW.Horizontal += 1;
+            if (_down)
+                _playerInput.ValueRW.Vertical -= 1;
+            if (_up)
+                _playerInput.ValueRW.Vertical += 1;
+            if (_jump)
+                _playerInput.ValueRW.Jump += 1;
         }
     }
 }

@@ -54,24 +54,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.transport@2.0.1\Analyzers\Unity.Transport.Analyzers.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.transport@2.0.1\Analyzers\Unity.Transport.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.SystemAPI.QueryBuilder.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.SystemAPI.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.LambdaJobs.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.Common.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.SystemAPI.Query.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.CodeFixes.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.AspectGenerator.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Common.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.EntityQueryBulkOperations.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.JobEntityGenerator.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.logging@1.0.11\Runtime\SourceGenerators\MainLoggingGenerator.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.logging@1.0.11\Runtime\SourceGenerators\LoggingCommon.dll" />
-    <Analyzer Include="E:\UnityProjects\MultiEntitiesExercise\Library\PackageCache\com.unity.netcode@1.0.12\Runtime\SourceGenerators\NetCodeSourceGenerator.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.SystemAPI.QueryBuilder.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.SystemAPI.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.LambdaJobs.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.Common.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.SystemAPI.Query.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.CodeFixes.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.AspectGenerator.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Common.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.EntityQueryBulkOperations.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.entities@1.0.11\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.JobEntityGenerator.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.logging@1.0.11\Runtime\SourceGenerators\MainLoggingGenerator.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.logging@1.0.11\Runtime\SourceGenerators\LoggingCommon.dll" />
+    <Analyzer Include="E:\GitHub\MultiEntitiesExercise\Library\PackageCache\com.unity.netcode@1.0.12\Runtime\SourceGenerators\NetCodeSourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
