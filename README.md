@@ -6,4 +6,5 @@ The game contains a simple board, two players and several boxes.
 All objects have colliders.
 
 The project made in Unity 2023.3.4
+
 /'Library' folder was deleted/
